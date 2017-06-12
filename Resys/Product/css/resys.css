@@ -1,0 +1,427 @@
+﻿html {
+   /* navbar-fixed-top*/
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    padding-top: 70px;
+    /* Margin bottom by footer height */
+    margin-bottom: 50px;
+    font-family: "Helvetica Neue","Helvetica","Arial","PingFang SC","Hiragino Sans GB", "Microsoft YaHei","WenQuanYi Micro Hei", sans-serif;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size:12px;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #f5f5f5;
+}
+
+.re-footer{
+    border-left:1px solid #bbb;
+    color:#777;
+}
+
+.container .text-muted {
+  margin: 8px 0 5px 0;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  margin:10px 0px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/*--Taskboard_Center.aspx--*/
+.project-navigation{
+        padding:0px 10px 0 10px;
+        border-bottom:1px solid #EEE;
+        overflow:auto;/*清除浮动*/
+        width:100%;
+}
+.boardview{
+    position: fixed;
+    top: 130px;
+    right: 0;
+    bottom: 60px;
+    left: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.taskboard{
+        position:relative;
+        height:100%;
+        background-color:#FFF;
+        border:0px solid #E5E5E5;
+        overflow-y:auto;
+        overflow-x:hidden;
+}
+#module_list {  
+    position:relative;
+    padding:10px;
+    white-space:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    height:100%;
+} 
+ul{
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+}
+  
+.modules{  
+    position: relative;
+    height: 100%;
+    width: 288px;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: stretch;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+    margin-right: 10px;
+    vertical-align: top;
+    -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+            border-radius: 3px;
+    background-color: #EEE; 
+} 
+.modules:last-child {
+    margin-right: 0;
+}
+.modules-add-view {
+    height: auto;
+}
+.modules-add-view .handler-wrap a {
+    color: #A6A6A6;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 14px 18px;
+}
+.modules-add-view .handler-wrap a:hover {
+    color: #3da8f5;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modules-highlight { 
+    position: relative;
+    height: 100%;
+    width: 288px;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: stretch;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+    margin-right: 10px;
+    vertical-align: top;
+    -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+            border-radius: 3px;
+    background-color:#E5E5E5; 
+}
+.ui-sortable-helper{
+    box-shadow: 0 7px 21px rgba(0,0,0,.15);
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg); 
+    z-index: 2014;
+}
+  
+.m_title {  
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-weight: 700;
+    z-index: 1;
+} 
+.m_title-name{
+    -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.modules-wrap{
+    position: relative;
+    height: 100%;
+    -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.modules-content{
+    -webkit-flex: 1 1 0;
+        -ms-flex: 1 1 0px;
+            flex: 1 1 0;
+    overflow: auto;
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+}
+        
+#loader {    
+    text-align: center;  
+}
+.connectedSortable{
+    padding:5px;/*暂时用于处理空任务列表的任务拖放问题*/
+}
+.task {
+    margin: 0 8px 8px;
+    padding: 0px;
+    background-color:#FFF;
+    -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+            border-radius: 3px;
+    box-shadow:0 1px 2px rgba(0,0,0,.1);
+    cursor:pointer;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+    position: relative;
+    white-space: normal;
+}
+.task-priority{
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    cursor: pointer;
+    background-color: #A6A6A6;
+}
+.check-box{
+    margin: 14px 12px 0 14px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #A6A6A6;
+    cursor: pointer;
+    border-radius: 3px;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+.task-content-set{
+    padding: 12px 0;
+    margin-left: 0;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    overflow: hidden;
+    line-height: 20px;
+    cursor: pointer;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    display: flex;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+.tag-label{
+    margin: 8px 8px 0 0;
+    float: left;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #3DA8F5;
+}
+.sortable-highlight{ 
+    margin: 0 8px 8px;
+    background-color: #E5E5E5;
+    height:64px;
+}
+.task-creator-handler-wrap {
+    width: 100%;
+    background-color: #EEEEEE;
+}
+.task-creator-handler-wrap .task-creator-handler {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 8px 8px;
+    padding: 14px 15px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+.link-add-handler {
+    color: #3da8f5 !important;
+}
+.task-creator-handler-wrap .task-creator-handler:hover {
+    background-color: #E5E5E5;
+}
+.link-add-handler:hover {
+    color: #0c92f3 !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+.listmore{
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    line-height: 1;
+    text-align: center;
+    color: #808080;
+    z-index: 1;
+}
+.listmore:hover{
+    color:#3da8f5;
+    text-decoration: none;
+    cursor: pointer;
+}
+.task-content-wrapper{
+    overflow: visible;
+    min-height: 24px;
+    -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+}
+.task-content{
+    margin: 2px 12px 0 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    word-wrap: break-word;
+    overflow: hidden;
+    width: 165px;
+    -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+}
+.task-avatar{
+    opacity: 1;
+    margin: 0 14px 0 0;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+/*任务完成样式*/
+.done {
+    opacity: 0.64;
+}
+.glyphicon-ok {
+    visibility: hidden;
+    color: #A6A6A6;
+    font-size: 14px;
+}
+.mvisible {
+    visibility:visible;
+}
+/*任务完成样式*/
+.icon-wrapper{
+    padding-left: 0;
+    color: #A6A6A6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+    height: 20px;
+    font-size: 12px;
+    vertical-align: middle;
+    margin: 2px 6px 0 0;
+    padding: 0 4px;
+    max-width: 100%;
+}
+.icon-wrapper.with-text{
+    padding-left: 0;
+    padding-right: 8px;
+}
+/*--Taskboard_Center.aspx--*/

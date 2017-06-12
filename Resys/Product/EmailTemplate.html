@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+	#EmailContainer{
+        width:100%;
+		margin:0 auto;
+		background-color:#f2f2f2;
+         border-radius: 3px; 
+	    box-sizing: border-box;
+		border: 1px solid #d9d9d9;
+		}
+	#EmailContent{
+	    margin:50px auto;
+        padding-top:30px;
+		background-color:white;
+		width:50%;
+		background: #fff; 
+		border-radius: 3px; 
+		box-sizing: border-box; 
+		border: 1px solid #d9d9d9;
+		}
+        .img-circle {
+            width:100px;
+            height:100px;
+            margin:0 auto;
+            border-radius: 50%;
+            background-color:#5bc1ef;
+        }
+            .img-circle p {
+			 font-weight:bold;
+			 font-size:15px;
+			 color:white;
+			  margin:0 auto;
+			  text-align:center;
+			  line-height:7;
+			   
+            }
+        p {
+           
+            padding: 0; 
+			font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif; 
+			text-align: center; 
+			word-break: normal; 
+			font-weight: normal; 
+			margin: 20px auto; 
+			font-size: 25px; 
+			color: #383838;
+        }
+        .wordspan {
+            padding-left: 30px;
+            padding-right: 30px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+            font-size: 20px;
+            color: #808080;
+        }
+    </style>
+</head>
+<body>
+<div id="EmailContainer">
+<div id="EmailContent">
+    <div class="img-circle">
+        <p style="font-family: 'Impact Normal', 'Impact';">$USER_NAME$</p> 
+    </div>
+    <p>$NAME$,您好</p> 
+    <div class="wordspan">
+    <span>
+    $content1$
+    </span>  
+    </div>
+    <div style="margin-top:70px;"></div>
+    <P>$content2$</P>
+  <div style="text-align:center;"><a href="$HREF$">$HREF2$</a></div> 
+    <br/>
+    </div>
+ </div>
+</body>
+</html>

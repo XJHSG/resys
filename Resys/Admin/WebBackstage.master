@@ -1,0 +1,645 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="WebBackstage.master.cs" Inherits="Admin_WebBackstage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Resys后台管理系统</title>
+    <meta name="robots" content="noarchive"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--Basic Styles-->
+    <link href="/Admin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Admin/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Admin/css/weather-icons.min.css" rel="stylesheet" />
+
+    <!--Beyond styles-->
+    <link href="/Admin/css/beyond.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Admin/css/demo.min.css" rel="stylesheet" />
+    <link href="/Admin/css/typicons.min.css" rel="stylesheet" />
+    <link href="/Admin/css/animate.min.css" rel="stylesheet" />
+
+    <!--[if lte IE 8]>
+        <script>
+            alert("为获得最佳效果，建议使用IE9、Chrome10或更高版本的浏览器。");
+        </script>
+    <![endif]-->
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script type="text/javascript" src="/Admin/js/skins.min.js"></script>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="navbar-container">
+                    <!-- Navbar Barnd -->
+                    <div class="navbar-header pull-left">
+                        <a href="Dashboard.aspx" class="navbar-brand">
+                            <small style="font-size:70%;padding-top:4px;font-weight:600;margin-left:20px;line-height:35px;" >
+                                Resys后台管理系统
+                            </small>
+                        </a>
+                    </div>
+                    <!-- /Navbar Barnd -->
+
+                    <!-- Sidebar Collapse -->
+                    <div class="sidebar-collapse " id="sidebar-collapse">
+                        <i class="collapse-icon fa fa-bars"></i>
+                    </div>
+                    <!-- /Sidebar Collapse -->
+                    <!-- Account Area and Settings --->
+                    <div class="navbar-header pull-right">
+                        <div class="navbar-account">
+                            <ul class="account-area">
+                                
+                                    <!--Notification Dropdown-->
+                                  
+                                    
+                                <li>
+                                    <a class="login-area dropdown-toggle" data-toggle="dropdown" style="min-width: 150px;">
+                                        <div class="avatar" title="View your public profile" style="width:30px;height:30px;border-radius:30px">
+                                            <asp:Image ID="Image1" runat="server" style="width:30px;height:30px;border-radius:30px"/>
+                                        </div>
+                                        <section>
+                                            <h2><span class="profile" ><asp:Label ID="UserName1" runat="server" Text="Label" ></asp:Label></span></h2>
+                                        </section>
+                                    </a>
+                                    <!--Login Area Dropdown-->
+                                    <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                        <li class="username"><a><asp:Label ID="UserName2" runat="server" Text="Label"></asp:Label></a></li>
+                                        
+                                        <li class="email"><a><asp:Label ID="Email" runat="server" Text="Label"></asp:Label></a></li>
+                                        <!--Avatar Area-->
+                                        <li>
+                                            <div class="avatar-area">
+                                                <asp:Image ID="Image2" runat="server" Class="avatar" />
+                                                <span class="caption" style="width:128px">更改头像</span>
+                                            </div>
+                                        </li>
+                                        <!--Avatar Area-->
+                                        <li class="edit">
+                                            <a href="#" class="pull-right">修改个人资料</a>
+                                        </li>
+                                        
+                                        <li class="dropdown-footer">
+                                            <a href="login.html">
+                                                退出登录
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!--/Login Area Dropdown-->
+                                </li>
+                                <!-- /Account Area -->
+                                <!--Note: notice that setting div must start right after account area list.
+                                no space must be between these elements-->
+                                <!-- Settings -->
+                            </ul>
+                            
+                            <div class="setting">
+                                <a id="btn-log-out" title="返回首页" href="/index.aspx" target="_blank">
+                                    <i class="icon glyphicon glyphicon-home"></i>
+                                </a>
+                            </div>
+                            <!-- Settings -->
+                        </div>
+                    </div>
+                    <!-- /Account Area and Settings -->
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="main-container container-fluid">
+            <div class="page-container">
+                <div class="page-sidebar" id="sidebar">
+                    <div class="sidebar-header-wrapper">
+                         <input type="text" class="searchinput" />
+                        <i class="searchicon fa fa-search"></i>
+                        <div class="searchhelper">查找资源，用户，新闻</div>
+                    </div>
+                    <ul class="nav sidebar-menu">
+                        <li class="active">
+                            <a href="/Admin/Webindex.aspx">
+                                <i class="menu-icon glyphicon glyphicon-home"></i>
+                                <span class="menu-text"> 首页 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-dropdown">
+                                <i class="menu-icon fa fa-desktop"></i>
+                                <span class="menu-text">网站管理
+                                </span>
+                                <i class="menu-expand"></i>
+                            </a>
+
+                            <ul class="submenu">
+                                <li>
+                                    <a href="Department_Add.aspx">
+                                        <%--<i class="menu-icon fa fa-plus-square"></i>--%>
+                                        <span class="menu-text">焦点图管理
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Department_Man.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">应用视频管理</span>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-dropdown">
+                                <i class="menu-icon fa fa-file-text"></i>
+                                <span class="menu-text">文章管理
+                                </span>
+                                <i class="menu-expand"></i>
+                            </a>
+                            
+                            <ul class="submenu">
+                                <li>
+                                    <a href="WebArticles_Add.aspx">
+                                        <%--<i class="menu-icon fa fa-plus-square"></i>--%>
+                                        <span class="menu-text">添加文章</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="WebArticles_Man.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">文章列表</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="WebArticles_Draft.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">草稿箱</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="WebArticles_Recycle.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">回收站</span>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-dropdown">
+                                <i class="menu-icon fa fa-paste"></i>
+                                <span class="menu-text"> 产品管理
+                                </span>
+                                <i class="menu-expand"></i>
+                            </a>
+
+                            <ul class="submenu">
+                                <li>
+                                    <a href="Department_Add.aspx">
+                                        <%--<i class="menu-icon fa fa-plus-square"></i>--%>
+                                        <span class="menu-text">产品用户管理</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Department_Man.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">项目管理</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Department_Man.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">资源管理</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Department_Man.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">操作日志管理</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Department_Man.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">用户反馈</span>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-dropdown">
+                                <i class="menu-icon fa fa-user"></i>
+                                <span class="menu-text"> 用户管理
+                                </span>
+                                <i class="menu-expand"></i>
+                            </a>
+
+                            <ul class="submenu">
+                                <li>
+                                    <a href="Department_Add.aspx">
+                                        <%--<i class="menu-icon fa fa-plus-square"></i>--%>
+                                        <span class="menu-text">个人资料</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Department_Man.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">修改密码</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Department_Man.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">管理员名单</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Department_Man.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">管理员授权</span>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-dropdown">
+                                <i class="menu-icon fa fa-hdd-o"></i>
+                                <span class="menu-text"> 文件管理
+                                </span>
+                                <i class="menu-expand"></i>
+                            </a>
+
+                            <ul class="submenu">
+                                <li>
+                                    <a href="Department_Add.aspx">
+                                        <%--<i class="menu-icon fa fa-plus-square"></i>--%>
+                                        <span class="menu-text">文件库</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Department_Man.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">文件查询</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Department_Man.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">回收站</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Department_Man.aspx">
+                                        <%--<i class="menu-icon fa fa-list"></i>--%>
+                                        <span class="menu-text">文件日志</span>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Product/User_Center.aspx">
+                                <i class="menu-icon fa fa-mail-reply-all"></i>
+                                <span class="menu-text"> 产品使用 </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    
+        <div class="page-content">
+        <!--Basic Scripts-->
+              <script src="/Admin/js/jquery-2.0.3.min.js"></script>
+    <script src="/Admin/js/bootstrap.min.js"></script>
+
+    <!--Beyond Scripts-->
+    <script src="/Admin/js/beyond.min.js"></script>
+
+
+    <!--Page Related Scripts-->
+    <!--Sparkline Charts Needed Scripts-->
+    <script src="/Admin/js/charts/sparkline/jquery.sparkline.js"></script>
+    <script src="/Admin/js/charts/sparkline/sparkline-init.js"></script>
+
+    <!--Easy Pie Charts Needed Scripts-->
+    <script src="/Admin/js/charts/easypiechart/jquery.easypiechart.js"></script>
+    <script src="/Admin/js/charts/easypiechart/easypiechart-init.js"></script>
+
+    <!--Flot Charts Needed Scripts-->
+    <script src="/Admin/js/charts/flot/jquery.flot.js"></script>
+    <script src="/Admin/js/charts/flot/jquery.flot.resize.js"></script>
+    <script src="/Admin/js/charts/flot/jquery.flot.pie.js"></script>
+    <script src="/Admin/js/charts/flot/jquery.flot.tooltip.js"></script>
+    <script src="/Admin/js/charts/flot/jquery.flot.orderBars.js"></script>
+               <script src="/Admin/js/jquery.cookie.js"></script>
+          <script type="text/javascript">
+              $(function () {
+                  $(".sidebar-menu li ul li a").click(function () {
+                      $.cookie("navstation", $(this).html(), { path: "/" });
+                  });
+                  $(".submenu li a").click(function () {
+                      $.cookie("navstation2", $(this).html(), { path: "/" });
+                  });
+              });n
+              var navstation = $.cookie("navstation");
+              if (navstation != null) {
+                  $(".sidebar-menu li ul li a").each(function () {
+                      if ($(this).html() == navstation) {
+                          $(this).parent().parent().css("display", "block");
+                          $(this).parent().parent().css("display", "block");
+                      }
+                  });
+              }
+              var navstation2 = $.cookie("navstation2");
+              if (navstation2 != null) {
+                  $(".submenu li a").each(function () {
+                      if ($(this).html() == navstation2) {
+                          $(this).parent().parent().parent().parent().css("display", "block");
+                      }
+                  });
+              }
+                     </script>
+        <script type="text/javascript">
+            // If you want to draw your charts with Theme colors you must run initiating charts after that current skin is loaded
+            $(window).bind("load", function () {
+
+                /*Sets Themed Colors Based on Themes*/
+                themeprimary = getThemeColorFromCss('themeprimary');
+                themesecondary = getThemeColorFromCss('themesecondary');
+                themethirdcolor = getThemeColorFromCss('themethirdcolor');
+                themefourthcolor = getThemeColorFromCss('themefourthcolor');
+                themefifthcolor = getThemeColorFromCss('themefifthcolor');
+
+                //Sets The Hidden Chart Width
+                $('#dashboard-bandwidth-chart')
+                    .data('width', $('.box-tabbs')
+                        .width() - 20);
+
+                //-------------------------Visitor Sources Pie Chart----------------------------------------//
+                var data = [
+                    {
+                        data: [[1, 21]],
+                        color: '#fb6e52'
+                    },
+                    {
+                        data: [[1, 12]],
+                        color: '#e75b8d'
+                    },
+                    {
+                        data: [[1, 11]],
+                        color: '#a0d468'
+                    },
+                    {
+                        data: [[1, 10]],
+                        color: '#ffce55'
+                    },
+                    {
+                        data: [[1, 46]],
+                        color: '#5db2ff'
+                    }
+                ];
+                var placeholder = $("#dashboard-pie-chart-sources");
+                placeholder.unbind();
+
+                $.plot(placeholder, data, {
+                    series: {
+                        pie: {
+                            innerRadius: 0.45,
+                            show: true,
+                            stroke: {
+                                width: 4
+                            }
+                        }
+                    }
+                });
+
+                //------------------------------Visit Chart------------------------------------------------//
+                var data2 = [{
+                    color: themesecondary,
+                    label: "Direct Visits",
+                    data: [[3, 2], [4, 5], [5, 4], [6, 11], [7, 12], [8, 11], [9, 8], [10, 14], [11, 12], [12, 16], [13, 9],
+                    [14, 10], [15, 14], [16, 15], [17, 9]],
+
+                    lines: {
+                        show: true,
+                        fill: true,
+                        lineWidth: .1,
+                        fillColor: {
+                            colors: [{
+                                opacity: 0
+                            }, {
+                                opacity: 0.4
+                            }]
+                        }
+                    },
+                    points: {
+                        show: false
+                    },
+                    shadowSize: 0
+                },
+                    {
+                        color: themeprimary,
+                        label: "Referral Visits",
+                        data: [[3, 10], [4, 13], [5, 12], [6, 16], [7, 19], [8, 19], [9, 24], [10, 19], [11, 18], [12, 21], [13, 17],
+                        [14, 14], [15, 12], [16, 14], [17, 15]],
+                        bars: {
+                            order: 1,
+                            show: true,
+                            borderWidth: 0,
+                            barWidth: 0.4,
+                            lineWidth: .5,
+                            fillColor: {
+                                colors: [{
+                                    opacity: 0.4
+                                }, {
+                                    opacity: 1
+                                }]
+                            }
+                        }
+                    },
+                    {
+                        color: themethirdcolor,
+                        label: "Search Engines",
+                        data: [[3, 14], [4, 11], [5, 10], [6, 9], [7, 5], [8, 8], [9, 5], [10, 6], [11, 4], [12, 7], [13, 4],
+                        [14, 3], [15, 4], [16, 6], [17, 4]],
+                        lines: {
+                            show: true,
+                            fill: false,
+                            fillColor: {
+                                colors: [{
+                                    opacity: 0.3
+                                }, {
+                                    opacity: 0
+                                }]
+                            }
+                        },
+                        points: {
+                            show: true
+                        }
+                    }
+                ];
+                var options = {
+                    legend: {
+                        show: false
+                    },
+                    xaxis: {
+                        tickDecimals: 0,
+                        color: '#f3f3f3'
+                    },
+                    yaxis: {
+                        min: 0,
+                        color: '#f3f3f3',
+                        tickFormatter: function (val, axis) {
+                            return "";
+                        },
+                    },
+                    grid: {
+                        hoverable: true,
+                        clickable: false,
+                        borderWidth: 0,
+                        aboveData: false,
+                        color: '#fbfbfb'
+
+                    },
+                    tooltip: true,
+                    tooltipOpts: {
+                        defaultTheme: false,
+                        content: " <b>%x May</b> , <b>%s</b> : <span>%y</span>",
+                    }
+                };
+                var placeholder = $("#dashboard-chart-visits");
+                var plot = $.plot(placeholder, data2, options);
+
+                //------------------------------Real-Time Chart-------------------------------------------//
+                var data = [],
+                    totalPoints = 300;
+
+                function getRandomData() {
+
+                    if (data.length > 0)
+                        data = data.slice(1);
+
+                    // Do a random walk
+
+                    while (data.length < totalPoints) {
+
+                        var prev = data.length > 0 ? data[data.length - 1] : 50,
+                            y = prev + Math.random() * 10 - 5;
+
+                        if (y < 0) {
+                            y = 0;
+                        } else if (y > 100) {
+                            y = 100;
+                        }
+
+                        data.push(y);
+                    }
+
+                    // Zip the generated y values with the x values
+
+                    var res = [];
+                    for (var i = 0; i < data.length; ++i) {
+                        res.push([i, data[i]]);
+                    }
+
+                    return res;
+                }
+                // Set up the control widget
+                var updateInterval = 100;
+                var plot = $.plot("#dashboard-chart-realtime", [getRandomData()], {
+                    yaxis: {
+                        color: '#f3f3f3',
+                        min: 0,
+                        max: 100,
+                        tickFormatter: function (val, axis) {
+                            return "";
+                        }
+                    },
+                    xaxis: {
+                        color: '#f3f3f3',
+                        min: 0,
+                        max: 100,
+                        tickFormatter: function (val, axis) {
+                            return "";
+                        }
+                    },
+                    colors: [themeprimary],
+                    series: {
+                        lines: {
+                            lineWidth: 0,
+                            fill: true,
+                            fillColor: {
+                                colors: [{
+                                    opacity: 0.5
+                                }, {
+                                    opacity: 0
+                                }]
+                            },
+                            steps: false
+                        },
+                        shadowSize: 0
+                    },
+                    grid: {
+                        hoverable: true,
+                        clickable: false,
+                        borderWidth: 0,
+                        aboveData: false
+                    }
+                });
+
+                function update() {
+
+                    plot.setData([getRandomData()]);
+
+                    plot.draw();
+                    setTimeout(update, updateInterval);
+                }
+                update();
+
+
+                //-------------------------Initiates Easy Pie Chart instances in page--------------------//
+                InitiateEasyPieChart.init();
+
+                //-------------------------Initiates Sparkline Chart instances in page------------------//
+                InitiateSparklineCharts.init();
+            });
+
+    </script>
+    <!--Google Analytics::Demo Only-->
+   
+            
+
+            
+
+            <!--Google Analytics::Demo Only-->
+         <div id="Content" style="padding:10px 30px; width:100%; float:left; margin:8px 0px;">
+              <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+</div>
+        </div>
+
+
+
+
+    
+    </form>
+</body>
+</html>

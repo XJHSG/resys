@@ -1,0 +1,129 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="RESYS.master.cs" Inherits="RESYS" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta content="always" name="referrer" />
+    <title>Resys 教学和科研团队协作工具的创行者</title>
+    <meta name="description" content="Resys锐赛思，教学和科研团队协作工具的创行者。" />
+    <meta name="author" content="Resys团队" />
+    <meta name="keywords" content="团队协作工具,教学,科研,科研团队,在线团队协作,锐赛思" />
+    <%--
+    <!--icon-->
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon-precomposed" href="#" />
+    --%>
+    <!--引入 Font Awesome-->
+    <link rel="stylesheet" href="/WebSite/css/fontawesome-4.2.0/css/font-awesome.min.css" />
+    
+    <!--引入 Font Css ico-->
+    <link href="Product/css/ico.css" rel="stylesheet" />
+
+    <!--引入 Bootstrap-->
+    <link rel="stylesheet" href="/Product/css/bootstrap.css" />
+        
+    <!--引入 UIkit-->
+    <%--<link rel="stylesheet" href="/Product/css/uikit.css" />--%>
+
+    <!--Main Styles-->
+    <link rel="stylesheet" href="/Product/css/resys.css" />
+
+    <!--[if lte IE 8]>
+        <script>
+            alert("为获得最佳效果，建议使用 IE9 及以上更高版本的现代浏览器。");
+        </script>
+    <![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">菜单</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/Index.aspx" style="font-family: 'Impact Normal', 'Impact'; font-size: 26px;">Resys</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <div class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="搜索..." />
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                             <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                            <a href="/Product/User_Edit.aspx" id="Avatar" runat="server">
+                                <asp:Image ID="Avatar_SImg" class="img-circle" runat="server" width="28" style="margin-top:-8px"/>
+                            </a>
+
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><i class="glyphicon glyphicon-question-sign"></i></a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-bell"></i></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/Product/User_Center.aspx">项目</a></li>
+                        <li><a href="#">我的</a></li>
+                        <li><a href="#">好友</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <!--引入 jQuery-->
+        <script type="text/javascript" src="/Product/js/jquery-2.1.4.min.js"></script>
+
+        <!-- Main Container -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <!-- /Main Container -->
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container text-center">
+                <p class="text-muted">Copyright © 2016-2017 Resys. All Rights Reserved.</p>
+                <ul class="list-inline">
+                    <li><a href="#">意见反馈</a></li>
+                    <li class="re-footer"><a href="#">关于我们</a></li>
+                    <li class="re-footer">联系我们：020-85537930</li>
+                </ul>
+            </div>
+        </footer>
+        <!-- /Footer -->
+
+
+        <!--引入 jQuery-UI-->
+        <script type="text/javascript" src="/Product/js/jquery-ui.min.js"></script>
+        <!--引入 Bootstrap-->
+        <script type="text/javascript" src="/Product/js/bootstrap.js"></script>
+        <!--引入 UIkit-->
+        <%--<script type="text/javascript" src="/Product/js/uikit.js"></script>--%>
+
+        <!--Main Scripts-->
+        <script type="text/javascript" src="/Product/js/resys.js"></script>
+
+    </form>
+</body>
+</html>

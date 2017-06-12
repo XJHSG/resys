@@ -1,0 +1,419 @@
+.btn {
+}
+.inputElem {
+	width:100%;
+	height:35px;
+	line-height:22px;
+	border:1px solid #ccc;
+}
+.parentCls {
+	width:100%;
+	height:auto; margin:0 auto;
+}
+.parentCls ul{ padding-left: 10px; padding-right: 10px; }
+.auto-tip li { width: 100%; height: 30px; line-height: 30px; font-size: 14px;}
+.auto-tip li.hoverBg {
+	background:#ddd;
+	cursor:pointer;
+}
+
+.hidden {
+	display:none;
+}
+.btn-arrow-right,
+.btn-arrow-left {
+    position: relative;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.btn-arrow-right {
+    padding-left: 36px;
+}
+
+.btn-arrow-left {
+    padding-right: 36px;
+}
+
+    .btn-arrow-right:before,
+    .btn-arrow-right:after,
+    .btn-arrow-left:before,
+    .btn-arrow-left:after { /* make two squares (before and after), looking similar to the button */
+        content: "";
+        position: absolute;
+        top: 5px; /* move it down because of rounded corners */
+        width: 22px; /* same as height */
+        height: 22px; /* button_outer_height / sqrt(2) */
+        background: inherit; /* use parent background */
+        border: inherit; /* use parent border */
+        border-left-color: transparent; /* hide left border */
+        border-bottom-color: transparent; /* hide bottom border */
+        border-radius: 0px 4px 0px 0px; /* round arrow corner, the shorthand property doesn't accept "inherit" so it is set to 4px */
+        -webkit-border-radius: 0px 4px 0px 0px;
+        -moz-border-radius: 0px 4px 0px 0px;
+    }
+
+.btn-arrow-right:before,
+.btn-arrow-right:after {
+    transform: rotate(45deg); /* rotate right arrow squares 45 deg to point right */
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+}
+
+.btn-arrow-left:before,
+.btn-arrow-left:after {
+    transform: rotate(225deg); /* rotate left arrow squares 225 deg to point left */
+    -webkit-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    -o-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+}
+
+.btn-arrow-right:before,
+.btn-arrow-left:before { /* align the "before" square to the left */
+    left: -11px;
+}
+
+.btn-arrow-right:after,
+.btn-arrow-left:after { /* align the "after" square to the right */
+    right: -11px;
+}
+
+.btn-arrow-right:after,
+.btn-arrow-left:before { /* bring arrow pointers to front */
+    z-index: 1;
+}
+
+.btn-arrow-right:before,
+.btn-arrow-left:after { /* hide arrow tails background */
+    background-color: white;
+}
+
+#Project_son {
+    font-size: 12pt;
+}
+
+
+
+
+/*Ìí¼Ó*/
+.Underline0 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.Underline2 {
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
+
+    .Underline2 a {
+        text-decoration: none;
+        color: #505050;
+        font-size: 16px;
+    }
+
+.Underline3 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom:1px solid #000000;
+    transition: box-shadow 0.4s ease-in-out,border-bottom 0.4s ease-in-out; 
+}
+.Underline3:first-child {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.Underline3:last-child {
+    border-bottom:none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.Underline3:hover {
+    cursor:pointer;
+    border-bottom:1px solid white;
+    box-shadow:0px 4px 4px 3px rgba(152, 152, 152, 0.60);
+    }
+
+    .Underline3:first-child:hover {
+         border-top-left-radius: 20px;
+         border-top-right-radius: 20px;
+        box-shadow:0px 4px 4px 3px rgba(152, 152, 152, 0.60);
+    }
+     .Underline3:last-child:hover {
+         border-bottom:none;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow:0px 4px 4px 3px rgba(152, 152, 152, 0.60);
+    }
+
+    .Underline3 a:hover {
+        color: #000000;
+    }
+
+.Underlin4 {
+    height: 60px;
+    line-height: 60px;
+}
+
+.Underline5 {
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    position: relative;
+    perspective: 4000px;
+    float: right;
+}
+
+.Underline6 {
+    height: 60px;
+    line-height: 60px;
+    margin: 0px;
+    padding: 0px;
+    transform-style: preserve-3d;
+    transition: transform .4s;
+    color: #505050;
+}
+
+    .Underline6:hover {
+        transform: translateZ(-50px) rotateX(90deg);
+    }
+
+.Underline7 {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    transform: translateZ(50px);
+    transition: all .4s;
+}
+
+.Underline8 {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    box-shadow: none;
+    transform: rotateX(-90deg) translateZ(50px);
+    transition: all .4s;
+}
+
+.Underline9 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+.OwnerImage {
+    border-radius: 24px;
+}
+
+.Suspension {
+    float: right;
+    display: none;
+}
+
+.LineFrame1 {
+    border: none;
+    border-bottom: #909090 solid 1px;
+    margin-bottom: 15px;
+}
+
+.LineFrame2 {
+    height: auto;
+    border: #909090 solid 1px;
+    padding: 20px 0;
+    margin: 20px;
+}
+
+.LineFrame3 {
+    float: left;
+}
+
+.Column1 {
+    width: 300px;
+    height: 100%;
+    border: #909090 solid 1px;
+    margin: 15px 7px;
+    overflow: hidden;
+}
+
+.txt1 {
+    font-family: 'Arial Negreta', 'Arial';
+    font-weight: bold;
+    font-style: normal;
+    font-kerning: normal;
+    font-size: 16px;
+}
+
+.Column2 {
+    height: 50px;
+    line-height: 50px;
+    background-color: rgba(242, 242, 242, 1);
+}
+
+.Column3 {
+    clear: both;
+    width: 299px;
+    height: 82px;
+    margin-top: 20px;
+    overflow: hidden;
+    padding-left: 0px;
+    background-color: white;
+    border-bottom: #909090 solid 1px;
+    border-top: #909090 solid 1px;
+}
+
+.box-UnfinishedTask {
+    height: 80px;
+    float: left;
+    width: 16px;
+    background-color: #909090;
+}
+
+.box-OverdueTask {
+    height: 80px;
+    float: left;
+    width: 16px;
+    background-color: #ff0000;
+}
+
+.CompleteTaskCheckBox {
+    width: 13px;
+    height: 13px;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.SubtaskName {
+    float: left;
+    position: relative;
+    top: -13px;
+    left: 30px;
+}
+
+.SubtaskRemark {
+    width: 16px;
+    height: 16px;
+}
+
+.SubtaskDeadline {
+    clear: both;
+    font-size: 14px;
+    width: 180px;
+    text-align: left;
+    position: relative;
+    top: -48px;
+    left: 46px;
+}
+
+.SubtaskLink {
+    clear: both;
+    width: 180px;
+    text-align: left;
+    float: left;
+    position: relative;
+    top: -45px;
+    left: 46px;
+}
+
+.SubtaskLink1 {
+    clear: both;
+    width: 45px;
+}
+
+.SubtaskLink2 {
+    clear: both;
+    width: 45px;
+    position: absolute;
+    left: 45px;
+    top: 0px;
+}
+
+.SubtaskLink3 {
+    clear: both;
+    width: 45px;
+    position: absolute;
+    left: 90px;
+    top: 0px;
+}
+
+.SubtaskLink4 {
+    clear: both;
+    width: 45px;
+    position: absolute;
+    left: 135px;
+    top: 0px;
+}
+
+.SubtaskLinkImg {
+    width: 12px;
+    height: 12px;
+}
+
+.SubtaskOwner {
+    clear: both;
+    text-align: center;
+    width: 50px;
+    position: relative;
+    top: -110px;
+    left: 230px;
+}
+
+.SubtaskOwnerImg {
+    width: 42px;
+    height: 42px;
+}
+
+.SubtaskOwnerName {
+    font-size: 12px;
+    width: 50px;
+    height: 20px;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.TaskList {
+    width: 313px;
+    background-color: rgba(242, 242, 242, 1);
+    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+    .TaskList div:first-child {
+        margin-top: 0px;
+    }
+
+.AddSubtasks {
+    clear: both;
+    width: 299px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #999999;
+    margin-top: 20px;
+    overflow: hidden;
+    padding-left: 0px;
+    border-bottom: #909090 solid 1px;
+    border-top: #909090 solid 1px;
+}
+
+    .AddSubtasks:hover {
+        text-decoration: none;
+        color: #909090;
+        background-color: #909090;
+    }
